@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* styles-login.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.main {
+    background: #181818;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #282828;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-title {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #282828;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #282828;
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1DB954;
+    box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.1);
+}
+
+input::placeholder {
+    color: #b3b3b3;
+}
+
+input[type="submit"] {
+    background: #1DB954;
+    color: white;
+    border: none;
+    padding: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+    background: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(29, 185, 84, 0.2);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Error message */
+.error-message {
+    background: #2d2222;
+    color: #ff4d4d;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ff4d4d;
+}
+
+/* Success message */
+.success-message {
+    background: #1db9541a;
+    color: #1DB954;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #1DB954;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .main {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .form-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main {
+    animation: slideUp 0.5s ease-out;
+}
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form action="/login" method="post">
+            <input type="email" placeholder="email" name="email">
+            <input type="password" placeholder="password" name="password">
+            <input type="submit" placeholder="login" name="login" value="login">
+        </form>
+    </div>
+</body>
+
+</html>

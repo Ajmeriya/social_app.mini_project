@@ -1,0 +1,168 @@
+//index.ejs
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* styles-register.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #121212;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .main {
+            background: #181818;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            border: 1px solid #282828;
+        }
+
+        .main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #1DB954, #1ed760);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #282828;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #282828;
+            color: #fff;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1DB954;
+            background: #282828;
+            box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.1);
+        }
+
+        input::placeholder {
+            color: #b3b3b3;
+        }
+
+        input[type="submit"] {
+            background: #1DB954;
+            color: white;
+            border: none;
+            padding: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="submit"]:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(29, 185, 84, 0.2);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* Validation styles */
+        input:invalid:not(:placeholder-shown) {
+            border-color: #ff4d4d;
+            background: #282828;
+        }
+
+        /* Responsive design */
+        @media (max-width: 640px) {
+            .main {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+
+            input {
+                padding: 12px 14px;
+            }
+        }
+
+        /* Animation */
+        @keyframes formAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main {
+            animation: formAppear 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form action="/register" method="post">
+            <input type="text" placeholder="username" name="username">
+            <input type="text" placeholder="name" name="name">
+            <input type="email" placeholder="email" name="email">
+            <input type="password" placeholder="password" name="password">
+            <input type="number" placeholder="age" name="age">
+            <input type="submit" placeholder="creat user" name="creat user">
+        </form>
+    </div>
+</body>
+
+</html>
